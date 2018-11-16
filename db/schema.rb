@@ -32,12 +32,12 @@ ActiveRecord::Schema.define(version: 2018_11_08_185840) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.datetime "time"
-    t.integer "location_id"
+    t.integer "place_id"
     t.string "description"
     t.string "poster"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_events_on_location_id"
+    t.index ["place_id"], name: "index_events_on_place_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -52,21 +52,21 @@ ActiveRecord::Schema.define(version: 2018_11_08_185840) do
 
   create_table "registers", force: :cascade do |t|
     t.datetime "time"
-    t.integer "user_id"
+    t.integer "student_id"
     t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_registers_on_event_id"
-    t.index ["user_id"], name: "index_registers_on_user_id"
+    t.index ["student_id"], name: "index_registers_on_student_id"
   end
 
   create_table "reservations", force: :cascade do |t|
     t.boolean "approval"
-    t.integer "admin_id"
+    t.integer "employee_id"
     t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["admin_id"], name: "index_reservations_on_admin_id"
+    t.index ["employee_id"], name: "index_reservations_on_employee_id"
     t.index ["event_id"], name: "index_reservations_on_event_id"
   end
 

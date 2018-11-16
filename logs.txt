@@ -1,12 +1,11 @@
+rake db:drop db:create db:migrate
+
 student = Student.create :name => "Uriel", :second_name => "Salazar De Urquidi", :semester => 7, :degree => "ITC"
 student_group = StudentGroup.create :name => "Un grupo estudiantil", :department => "ITC"
 tag = Tag.create :name => "programming"
 employee = Employee.create :name => "Pedro", :second_name => "Gutierrez", :department => "ITC"
-place = Place.create :name => "Un lugar", :building => "CIAP", :floor => 3, :classroom => "123", :max_cap
-acity => 40
+place = Place.create :name => "Un lugar", :building => "CIAP", :floor => 3, :classroom => "123", :max_capacity => 40
 area = Area.create :name => "Tecnologia"
-
-event = Event.create :name => "Un evento", :time => DateTime.current, :location_id => 1, :description =>
-"Una descripcion", :poster => "algo"
-reservation = Reservation.create :approval => false, :admin_id => 1, :event_id => 1
-register = Register.create :time => DateTime.current, :user_id => 1, :event_id => 1
+event = Event.create :name => "Un evento", :time => DateTime.current, :place_id => 1, :description => "Una descripcion", :poster => "algo"
+reservation = Reservation.create :approval => false, :employee_id => 1, :event_id => 1
+register = Register.create :time => DateTime.current, :student_id => 1, :event_id => 1

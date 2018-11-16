@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  belongs_to :location
+  belongs_to :place
   has_and_belongs_to_many :areas
-  has_many :registers
+  has_many :reservations
 end
