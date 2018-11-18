@@ -5,12 +5,12 @@ class RegistersController < ApplicationController
   def index
     @registers = Register.all
 
-    render json: @registers
+    render json: @registers, :include => [:student, :event]
   end
 
   # GET /registers/1
   def show
-    render json: @register
+    render json: @register, :include => [:student, :event]
   end
 
   # POST /registers
