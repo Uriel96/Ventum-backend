@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_08_185840) do
+ActiveRecord::Schema.define(version: 2018_11_25_192952) do
 
   create_table "areas", force: :cascade do |t|
     t.string "name"
@@ -20,9 +20,8 @@ ActiveRecord::Schema.define(version: 2018_11_08_185840) do
 
   create_table "employees", force: :cascade do |t|
     t.string "email"
-    t.string "password"
     t.string "name"
-    t.string "second_name"
+    t.string "last_name"
     t.string "department"
     t.boolean "is_admin"
     t.datetime "created_at", null: false
@@ -35,13 +34,17 @@ ActiveRecord::Schema.define(version: 2018_11_08_185840) do
     t.integer "place_id"
     t.string "description"
     t.string "poster"
+    t.string "tags"
+    t.integer "max_capacity"
+    t.integer "price"
+    t.string "contact"
+    t.string "areas"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["place_id"], name: "index_events_on_place_id"
   end
 
   create_table "places", force: :cascade do |t|
-    t.string "name"
     t.string "building"
     t.integer "floor"
     t.string "classroom"
@@ -72,24 +75,19 @@ ActiveRecord::Schema.define(version: 2018_11_08_185840) do
 
   create_table "student_groups", force: :cascade do |t|
     t.string "name"
-    t.string "department"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|
     t.string "email"
-    t.string "password"
     t.string "name"
-    t.string "second_name"
+    t.string "last_name"
     t.string "semester"
     t.string "degree"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "name"
+    t.string "photo"
+    t.string "student_groups"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
