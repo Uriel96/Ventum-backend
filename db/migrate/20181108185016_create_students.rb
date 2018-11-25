@@ -7,6 +7,8 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :second_name
       t.string :semester
       t.string :degree
+      t.string :photo
+      t.string :student_groups
 
       t.timestamps
     end

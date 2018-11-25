@@ -6,6 +6,8 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.references :place, references: :place, foreign_key: true
       t.string :description
       t.string :poster
+      t.string :tags
+      t.integer :max_capacity
 
       t.timestamps
     end
