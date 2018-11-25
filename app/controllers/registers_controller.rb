@@ -4,6 +4,9 @@ class RegistersController < ApplicationController
   # GET /registers
   def index
     @registers = Register.all
+    response.headers['X-Total-Count'] = '10'
+    response.headers['Access-Control-Allow-Headers'] = 'X-Total-Count'
+
 
     render json: @registers, :include => [:student, :event]
   end

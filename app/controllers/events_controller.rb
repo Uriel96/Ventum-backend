@@ -4,6 +4,8 @@ class EventsController < ApplicationController
   # GET /events
   def index
     @events = Event.all
+    response.headers['X-Total-Count'] = '10'
+    response.headers['Access-Control-Allow-Headers'] = 'X-Total-Count'
 
     render json: @events, :include => :place
   end

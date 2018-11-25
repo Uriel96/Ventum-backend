@@ -4,6 +4,9 @@ class AreasController < ApplicationController
   # GET /areas
   def index
     @areas = Area.all
+    response.headers['X-Total-Count'] = '10'
+    response.headers['Access-Control-Allow-Headers'] = 'X-Total-Count'
+
 
     render json: @areas
   end

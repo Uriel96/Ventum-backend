@@ -4,6 +4,9 @@ class ReservationsController < ApplicationController
   # GET /reservations
   def index
     @reservations = Reservation.all
+    response.headers['X-Total-Count'] = '10'
+    response.headers['Access-Control-Allow-Headers'] = 'X-Total-Count'
+
 
     render json: @reservations, :include => [:employee, :event]
   end

@@ -4,6 +4,9 @@ class StudentsController < ApplicationController
   # GET /students
   def index
     @students = Student.all
+    response.headers['X-Total-Count'] = '10'
+    response.headers['Access-Control-Allow-Headers'] = 'X-Total-Count'
+
 
     render json: @students
   end

@@ -4,6 +4,8 @@ class PlacesController < ApplicationController
   # GET /places
   def index
     @places = Place.all
+    response.headers['X-Total-Count'] = '10'
+    response.headers['Access-Control-Allow-Headers'] = 'X-Total-Count'
 
     render json: @places
   end
