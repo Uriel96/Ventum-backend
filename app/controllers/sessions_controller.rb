@@ -9,6 +9,16 @@ class SessionsController < ApplicationController
         end
    end
 
+   def index
+        user = User.where(email: params[:email]).first
+
+        if user.authentication_token == params[:authentication_token]
+            render json: user.as_json(only: [:email, :authentication_token])
+        else
+            head(:unauthorized)
+        end
+   end
+
    def destroy
    end 
 end  
