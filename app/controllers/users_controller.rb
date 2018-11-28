@@ -18,11 +18,13 @@ class UsersController < ApplicationController
 
   def logout
     user = User.where(email: params[:email]).first
+    puts params[:email]
+    puts user
 
     if user and user.update(access_token: nil)
       render json: user
     else
-      render json: json: {
+      render json: {
         message: 'Could not log out'
       }, status: :unprocessable_entity
     end
