@@ -1,0 +1,9 @@
+development:
+  cloud_name: "samiikeller"
+  api_key: "264839835115676"
+  api_secret: "5tkJOa6Opl48v3ctJtVg2EiYTv8"
+
+production:
+  cloud_name: "samiikeller"
+  api_key: "264839835115676"
+  api_secret: "5tkJOa6Opl48v3ctJtVg2EiYTv8"

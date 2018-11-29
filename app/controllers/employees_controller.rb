@@ -27,6 +27,8 @@ class EmployeesController < ApplicationController
     end
   end
 
+
+
   # PATCH/PUT /employees/1
   def update
     if @employee.update(employee_params)
@@ -49,6 +51,6 @@ class EmployeesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def employee_params
-      params.require(:employee).permit(:id, :email, :password, :name, :last_name, :department, :is_admin)
+      params.require(:employee).permit(:id, :email, :name, :last_name, :department, :is_admin, :photo)
     end
 end
