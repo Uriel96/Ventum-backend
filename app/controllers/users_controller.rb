@@ -32,9 +32,7 @@ class UsersController < ApplicationController
 
   def logout
     user = User.where(email: params[:email]).first
-    puts params[:email]
-    puts user
-
+    
     if user and user.update(access_token: nil)
       render json: user
     else
