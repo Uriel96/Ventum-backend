@@ -40,6 +40,8 @@ User.create(name:"jose", email:"jose@mail.com", password:"jose")
 Student.create(email: "uriel@mail.com", name:"uriel", last_name:"salazar", semester:"7", degree:"ITC", photo:"https://scontent.fntr3-1.fna.fbcdn.net/v/t1.0-9/10383899_10201883657173558_762304888525850631_n.jpg?_nc_cat=102&_nc_ht=scontent.fntr3-1.fna&oh=a3b79d1e858d07d79c49141defa649a5&oe=5C6908FC", student_groups:"WiSE, COFFE")
 Student.create(email: "sam@mail.com", name:"sam", last_name:"solis", semester:"2", degree:"BCT", photo:"https://scontent.fntr3-1.fna.fbcdn.net/v/t1.0-9/40666625_10217437837123029_7728994335793872896_n.jpg?_nc_cat=102&_nc_ht=scontent.fntr3-1.fna&oh=25d68f7dfeca4742f937f92e8e04bd66&oe=5CAB649D", student_groups:"WiSE")
 Student.create(email: "hugo@mail.com", name:"hugo", last_name:"cruz", semester:"5", degree:"LAE", photo:"https://scontent.fntr3-1.fna.fbcdn.net/v/t1.0-9/45325086_10156346657520589_4574940004819664896_n.jpg?_nc_cat=104&_nc_ht=scontent.fntr3-1.fna&oh=daf84fae811ff8071d20500194451ab0&oe=5CAC2539", student_groups:"SALAD, LOL")
+Student.create(email: "zulma@mail.com", name:"zulma", last_name:"solis", semester:"9", degree:"LPO", photo:"/image/upload/v1543500652/22365204_1672000149507716_3416249412894079779_n.jpg.jpg", student_groups:"SALAD, LOL")
+
 
 #employee
 Employee.create(email:"raul@mail.com", name:"raul", last_name:"mata", department:"ciencias", is_admin:"true", photo:"https://scontent.fntr3-1.fna.fbcdn.net/v/t1.0-9/16194939_10211842094874053_5435105519924253747_n.jpg?_nc_cat=105&_nc_ht=scontent.fntr3-1.fna&oh=91dbf6dec5b7a84cfa1b2e453757ba1f&oe=5CA41DBA")
