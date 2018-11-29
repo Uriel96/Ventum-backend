@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resources :areas
   resources :places
   resources :sessions
+  resources :users
+ # get 'users', to:'users#index'
+  #get 'users/:id', to:'users#show'
+  
   post 'auth/register', to: 'users#register'
   post 'auth/login', to: 'users#login'
   get 'test', to: 'users#test'

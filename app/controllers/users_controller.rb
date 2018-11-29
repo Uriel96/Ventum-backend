@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show]
   skip_before_action :authenticate_request, only: %i[login register]
 
   # POST /register
@@ -10,6 +11,19 @@ class UsersController < ApplicationController
    else
     render json: @user.errors, status: :bad
    end 
+  end
+
+  # GET /user
+  def index
+    @users = User.all
+    response.headers['X-Total-Count'] = '10'
+    response.headers['Access-Control-Allow-Headers'] = 'X-Total-Count'
+
+    render json: @users
+  end
+
+  def show
+    render json: @users
   end
 
   def login
@@ -48,6 +62,11 @@ class UsersController < ApplicationController
       render json: { error: command.errors }, status: :unauthorized
     end
   end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
 
   def user_params
     params.permit(
